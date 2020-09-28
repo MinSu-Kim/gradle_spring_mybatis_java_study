@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Import;
 @Import({ContextDataSource.class, ContextSqlSession.class})
 @ComponentScan(basePackages = {"gradle_spring_mybatis_java_study.mapper",
                                "gradle_spring_mybatis_java_study.service",
-                               ""
 })
 public class ContextRoot {
 
