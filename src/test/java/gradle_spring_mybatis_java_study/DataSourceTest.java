@@ -2,12 +2,10 @@ package gradle_spring_mybatis_java_study;
 
 import java.sql.SQLException;
 
-import javax.inject.Inject;
 import javax.sql.DataSource;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +20,7 @@ import gradle_spring_mybatis_java_study.config.ContextRoot;
 public class DataSourceTest extends AbstractTest {
     @Autowired
     private DataSource dataSource;
-    @Inject
+    @Autowired
     private SqlSessionFactory sessionFactory;
 
     @Test

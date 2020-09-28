@@ -25,7 +25,7 @@ public class ITransactionServiceTest extends AbstractTest {
 
     @Test(expected = DuplicateKeyException.class)
     public void test1registerTransaction_Dept_Fail() throws SQLException {
-        log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+        log.trace(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
         Department department = new Department(1, "태스크포스", 10); // DuplicateKeyException
         Employee employee = new Employee(1004, "박신혜", "과장", new Employee(4377), 4100000, department);
 
