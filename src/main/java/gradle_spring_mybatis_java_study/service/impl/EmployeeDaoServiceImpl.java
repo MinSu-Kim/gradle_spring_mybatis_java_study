@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 
 import gradle_spring_mybatis_java_study.dto.Employee;
 import gradle_spring_mybatis_java_study.mapper.EmployeeMapper;
-import gradle_spring_mybatis_java_study.service.IEmployeeService;
+import gradle_spring_mybatis_java_study.service.EmployeeService;
 
 @Service
-public class EmployeeDaoServiceImpl implements IEmployeeService{
+public class EmployeeDaoServiceImpl implements EmployeeService{
     @Autowired
     private EmployeeMapper mapper;
     

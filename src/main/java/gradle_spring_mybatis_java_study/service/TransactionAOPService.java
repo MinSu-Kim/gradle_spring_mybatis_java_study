@@ -6,10 +6,7 @@ import gradle_spring_mybatis_java_study.dto.Department;
 import gradle_spring_mybatis_java_study.dto.Employee;
 
 @Service
-public interface ITransactionService {
-
-    public void registerTransaction(Department department, Employee employee);
-
-    public void unRegisterTransaction(Department department, Employee employee);
-
+public interface TransactionAOPService {
+    int trRegister(Department department, Employee employee);
+    int trUnRegister(Department department, Employee employee);
 }

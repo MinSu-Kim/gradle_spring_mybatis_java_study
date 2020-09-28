@@ -19,7 +19,7 @@ import gradle_spring_mybatis_java_study.dto.Employee;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class EmployeeServiceTest extends AbstractTest{
     @Autowired
-    private IEmployeeService service;
+    private EmployeeService service;
     
     @Test
     public void testAddEmloyee() {

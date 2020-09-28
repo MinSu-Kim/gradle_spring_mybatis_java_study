@@ -1,19 +1,16 @@
 package gradle_spring_mybatis_java_study.service.impl;
 
-import java.sql.SQLException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import gradle_spring_mybatis_java_study.dto.Department;
 import gradle_spring_mybatis_java_study.dto.Employee;
 import gradle_spring_mybatis_java_study.mapper.DepartmentMapper;
 import gradle_spring_mybatis_java_study.mapper.EmployeeMapper;
-import gradle_spring_mybatis_java_study.service.TransactionService;
+import gradle_spring_mybatis_java_study.service.TransactionAOPService;
 
 @Service
-public class TransactionServiceImpl implements TransactionService {
+public class TransactionAOPServiceImpl implements TransactionAOPService {
     @Autowired
     private DepartmentMapper deptMapper;
 
@@ -21,19 +18,19 @@ public class TransactionServiceImpl implements TransactionService {
     private EmployeeMapper empMapper;
 
     @Override
-    @Transactional
-    public void registerTransaction(Department department, Employee employee) {
+    public int trRegister(Department department, Employee employee) {
         int res = deptMapper.insertDepartment(department);
         res += empMapper.insertEmployee(employee);
-        if (res != 2) throw new RuntimeException();
+        if (res !=2 ) throw new RuntimeException();
+        return res;
     }
 
     @Override
-    @Transactional(rollbackFor = SQLException.class)
-    public void unRegisterTransaction(Department department, Employee employee) {
+    public int trUnRegister(Department department, Employee employee) {
         int res = empMapper.deleteEmployee(employee);
         res += deptMapper.deleteDepartment(department);
-        if (res != 2) throw new RuntimeException();
+        if (res !=2 ) throw new RuntimeException();
+        return res;
     }
 
 }

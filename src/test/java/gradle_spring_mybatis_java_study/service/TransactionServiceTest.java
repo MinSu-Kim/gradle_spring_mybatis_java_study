@@ -19,9 +19,9 @@ import gradle_spring_mybatis_java_study.dto.Employee;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {ContextRoot.class} )
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class ITransactionServiceTest extends AbstractTest {
+public class TransactionServiceTest extends AbstractTest {
     @Autowired
-    private ITransactionService service;
+    private TransactionService service;
 
     @Test(expected = DuplicateKeyException.class)
     public void test1registerTransaction_Dept_Fail() throws SQLException {
