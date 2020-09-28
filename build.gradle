@@ -14,7 +14,6 @@ repositories {
 }
 
 dependencies {
-    
     compile group: 'org.springframework', name: 'spring-context', version: '5.2.9.RELEASE'
     compile group: 'org.springframework', name: 'spring-jdbc', version: '5.2.9.RELEASE'
     testCompile group: 'org.springframework', name: 'spring-test', version: '5.2.9.RELEASE'
@@ -27,15 +26,10 @@ dependencies {
     compile group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '19.7.0.0'
     compile group: 'com.zaxxer', name: 'HikariCP', version: '3.4.5'
     
-    // 스프링 properties 파일 암호화 
-//    compile group: 'org.jasypt', name: 'jasypt', version: '1.9.3'
-//    compile group: 'org.jasypt', name: 'jasypt-spring31', version: '1.9.3'
-    
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3' 
     compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
     
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
-//    testCompile group: 'org.slf4j', name: 'slf4j-jcl', version: '1.7.30'
       
     testImplementation 'junit:junit:4.12'
 }
