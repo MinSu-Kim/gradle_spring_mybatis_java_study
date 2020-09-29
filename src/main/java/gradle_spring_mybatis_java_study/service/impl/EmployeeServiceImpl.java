@@ -8,7 +8,8 @@ import gradle_spring_mybatis_java_study.mapper.EmployeeMapper;
 import gradle_spring_mybatis_java_study.service.EmployeeService;
 
 @Service
-public class EmployeeDaoServiceImpl implements EmployeeService{
+public class EmployeeServiceImpl implements EmployeeService {
+
     @Autowired
     private EmployeeMapper mapper;
     
@@ -19,4 +20,5 @@ public class EmployeeDaoServiceImpl implements EmployeeService{
     public int delEmployee(Employee employee) {
         return mapper.deleteEmployee(employee);
     }
+
 }

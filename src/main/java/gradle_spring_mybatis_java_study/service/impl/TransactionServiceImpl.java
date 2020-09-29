@@ -21,7 +21,7 @@ public class TransactionServiceImpl implements TransactionService {
     private EmployeeMapper empMapper;
 
     @Override
-    @Transactional
+    /* @Transactional */
     public void registerTransaction(Department department, Employee employee) {
         int res = deptMapper.insertDepartment(department);
         res += empMapper.insertEmployee(employee);
@@ -29,11 +29,12 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    @Transactional(rollbackFor = SQLException.class)
+    /* @Transactional(rollbackFor = SQLException.class) */
     public void unRegisterTransaction(Department department, Employee employee) {
         int res = empMapper.deleteEmployee(employee);
         res += deptMapper.deleteDepartment(department);
         if (res != 2) throw new RuntimeException();
     }
+
 
 }

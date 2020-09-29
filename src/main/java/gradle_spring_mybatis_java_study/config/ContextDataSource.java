@@ -34,10 +34,7 @@ public class ContextDataSource {
         }
         return dataSource;
     }
-
-    /**
-     * 트랜잭션 매니저 등록
-     */
+    
     @Bean
     public PlatformTransactionManager transactionManager() {
         return new DataSourceTransactionManager(dataSource());

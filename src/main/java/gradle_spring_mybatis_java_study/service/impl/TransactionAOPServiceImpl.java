@@ -11,6 +11,7 @@ import gradle_spring_mybatis_java_study.service.TransactionAOPService;
 
 @Service
 public class TransactionAOPServiceImpl implements TransactionAOPService {
+
     @Autowired
     private DepartmentMapper deptMapper;
 

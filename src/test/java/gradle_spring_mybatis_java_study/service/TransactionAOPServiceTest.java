@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
+import org.junit.After;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,10 +19,16 @@ import gradle_spring_mybatis_java_study.dto.Department;
 import gradle_spring_mybatis_java_study.dto.Employee;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {ContextRoot.class} )@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@ContextConfiguration(classes = {ContextRoot.class} )
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TransactionAOPServiceTest {
-    protected static final Log log = LogFactory.getLog(TransactionAOPServiceTest.class);
-    
+    private static final Log log = LogFactory.getLog(TransactionAOPServiceTest.class);
+
+    @After
+    public void tearDown() throws Exception {
+        System.out.println();
+    }
+
     @Autowired
     private TransactionAOPService service;
 
@@ -78,5 +85,4 @@ public class TransactionAOPServiceTest {
 
         service.trUnRegister(department, employee);
     }
-
 }

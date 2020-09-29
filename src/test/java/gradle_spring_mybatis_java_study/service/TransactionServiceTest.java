@@ -2,6 +2,9 @@ package gradle_spring_mybatis_java_study.service;
 
 import java.sql.SQLException;
 
+import org.apache.ibatis.logging.Log;
+import org.apache.ibatis.logging.LogFactory;
+import org.junit.After;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +14,6 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import gradle_spring_mybatis_java_study.AbstractTest;
 import gradle_spring_mybatis_java_study.config.ContextRoot;
 import gradle_spring_mybatis_java_study.dto.Department;
 import gradle_spring_mybatis_java_study.dto.Employee;
@@ -19,7 +21,14 @@ import gradle_spring_mybatis_java_study.dto.Employee;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {ContextRoot.class} )
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class TransactionServiceTest extends AbstractTest {
+public class TransactionServiceTest {
+    private static final Log log = LogFactory.getLog(TransactionServiceTest.class);
+
+    @After
+    public void tearDown() throws Exception {
+        System.out.println();
+    }
+
     @Autowired
     private TransactionService service;
 
@@ -76,6 +85,5 @@ public class TransactionServiceTest extends AbstractTest {
 
         service.unRegisterTransaction(department, employee);
     }
-
 
 }

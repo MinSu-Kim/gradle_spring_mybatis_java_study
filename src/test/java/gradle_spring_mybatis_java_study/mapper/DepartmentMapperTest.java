@@ -2,6 +2,9 @@ package gradle_spring_mybatis_java_study.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.logging.Log;
+import org.apache.ibatis.logging.LogFactory;
+import org.junit.After;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,14 +14,20 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Assert;
 
-import gradle_spring_mybatis_java_study.AbstractTest;
 import gradle_spring_mybatis_java_study.config.ContextRoot;
 import gradle_spring_mybatis_java_study.dto.Department;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {ContextRoot.class} )
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class DepartmentMapperTest extends AbstractTest{
+public class DepartmentMapperTest {
+    private static final Log log = LogFactory.getLog(DepartmentMapperTest.class);
+
+    @After
+    public void tearDown() throws Exception {
+        System.out.println();
+    }
+    
     @Autowired
     private DepartmentMapper dao;
 
