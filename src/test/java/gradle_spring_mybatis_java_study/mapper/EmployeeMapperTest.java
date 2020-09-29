@@ -38,7 +38,7 @@ public class EmployeeMapperTest {
         Assert.isTrue(res > -1, "The value must be greater than zero");
     }
 
-    /* @Test */
+    @Test
     public void test02DeleteEmployee() {
         log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
         Employee employee = new Employee(1004);
