@@ -1,10 +1,7 @@
 package gradle_spring_mybatis_java_study.service.impl;
 
-import java.sql.SQLException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import gradle_spring_mybatis_java_study.dto.Department;
 import gradle_spring_mybatis_java_study.dto.Employee;
