@@ -18,3 +18,9 @@ create table employee (
    foreign key(manager) references employee(empno),
    foreign key(dno) references department(deptno)
 );
+
+-- test
+CREATE TABLE title(
+    NO number NOT NULL PRIMARY KEY,
+    name varchar2(50) NOT null
+);

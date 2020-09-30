@@ -11,3 +11,7 @@ INSERT INTO EMPLOYEE VALUES(1365, '김상원', '사원', 3426 , 1500000,1);
 INSERT INTO EMPLOYEE VALUES (2106, '김창섭', '대리', 1003, 2500000, 2);
 INSERT INTO EMPLOYEE VALUES (3427, '최종철', '사원', 3011, 1500000, 3);
         
+-- test
+INSERT INTO title values(1, '사장');
+INSERT INTO title values(2, '부장');
+INSERT INTO title values(3, '과장');
